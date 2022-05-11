@@ -1,6 +1,7 @@
 var express = require('express');
 var app = express();
 var port = process.env.port || 3000;
+app.use(express.json()); // Get body from the client
 app.use(express.static('public'));
 var memes = [
     {

@@ -47,7 +47,6 @@ function getAllMemes() {
                     return [4 /*yield*/, axios.get('/show-memes')];
                 case 1:
                     data = (_a.sent()).data;
-                    console.log(data);
                     memes = data.memes, error = data.error;
                     if (error)
                         throw new Error(error);
@@ -66,7 +65,7 @@ function renderMemes(memes) {
     var root = document.querySelector('#root');
     var html = '';
     memes.forEach(function (meme) {
-        html += "<p>" + meme.des + "</p>\n                 <img src=\"" + meme.src + "\" id=\"" + meme.id + "\"></img>";
+        html += "<p>" + meme.des + "</p>\n                 <button id=\"" + meme.id + "\" onclick=\"handleDelete()\">Delete</button>\n                 <img src=\"" + meme.src + "\"></img>";
     });
     root.innerHTML = html;
 }

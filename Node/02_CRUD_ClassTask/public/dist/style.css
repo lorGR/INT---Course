@@ -1,3 +1,13 @@
 * {
   box-sizing: border-box;
 }
+
+#root {
+  max-width: 350px;
+}
+#root p {
+  display: inline;
+}
+#root img {
+  width: 100%;
+}
