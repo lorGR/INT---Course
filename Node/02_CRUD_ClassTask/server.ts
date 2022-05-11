@@ -26,7 +26,7 @@ let memes: Array<Memes> = [
         des: "The biggest carrot ever",
         id: "df8h4d8",
     }
-]
+];
 
 app.get('/show-memes', (req, res) => {
     try {
@@ -35,7 +35,6 @@ app.get('/show-memes', (req, res) => {
         res.send({ error: error.message });
     }
 })
-
 
 app.listen(port, () => {
     console.log(`LISTENING ON PORT ${port}`);
