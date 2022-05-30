@@ -37,6 +37,20 @@ app.get('/show-memes', (req, res) => {
     }
 })
 
+app.delete('/delete-meme', (req, res) => {
+    try {
+        const { memeID } = req.body;
+        if (!memeID) throw new Error("Meme ID isn't found.");
+
+        memes = memes.filter(meme => meme.id !== memeID)
+        console.log(memes); // Retruns a new array of new memes without the one that was clicked delete
+        res.send({ memes });
+
+    } catch (error) {
+        res.send({ error: error.message })
+    }
+})
+
 app.listen(port, () => {
     console.log(`LISTENING ON PORT ${port}`);
 })

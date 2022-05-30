@@ -28,6 +28,19 @@ app.get('/show-memes', function (req, res) {
         res.send({ error: error.message });
     }
 });
+app["delete"]('/delete-meme', function (req, res) {
+    try {
+        var memeID_1 = req.body.memeID;
+        if (!memeID_1)
+            throw new Error("Meme ID isn't found.");
+        memes = memes.filter(function (meme) { return meme.id !== memeID_1; });
+        console.log(memes); // Retruns a new array of new memes without the one that was clicked delete
+        res.send({ memes: memes });
+    }
+    catch (error) {
+        res.send({ error: error.message });
+    }
+});
 app.listen(port, function () {
     console.log("LISTENING ON PORT " + port);
 });

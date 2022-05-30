@@ -35,9 +35,6 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 function handleClickShow() {
-    getAllMemes();
-}
-function getAllMemes() {
     return __awaiter(this, void 0, void 0, function () {
         var data, memes, error, error_1;
         return __generator(this, function (_a) {
@@ -61,11 +58,46 @@ function getAllMemes() {
         });
     });
 }
+// async function getAllMemes() {
+//     try {
+//         // @ts-ignore
+//         const { data } = await axios.get('/show-memes');
+//         const { memes, error } = data;
+//         if (error) throw new Error(error);
+//         renderMemes(memes);
+//     } catch (error) {
+//         console.log(error);
+//     }
+// }
 function renderMemes(memes) {
     var root = document.querySelector('#root');
-    var html = '';
+    var html = "";
     memes.forEach(function (meme) {
-        html += "<p>" + meme.des + "</p>\n                 <button id=\"" + meme.id + "\" onclick=\"handleDelete()\">Delete</button>\n                 <img src=\"" + meme.src + "\"></img>";
+        html += "<p>" + meme.des + "</p>\n        <button onclick='handleDeleteMeme(\"" + meme.id + "\")'>Delete</button>\n        <img src=\"" + meme.src + "\">";
     });
     root.innerHTML = html;
+}
+function handleDeleteMeme(memeID) {
+    return __awaiter(this, void 0, void 0, function () {
+        var data, memes, error, error_2;
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0:
+                    _a.trys.push([0, 2, , 3]);
+                    return [4 /*yield*/, axios["delete"]('/delete-meme', { data: { memeID: memeID } })];
+                case 1:
+                    data = (_a.sent()).data;
+                    memes = data.memes, error = data.error;
+                    if (error)
+                        throw new Error(error);
+                    renderMemes(memes);
+                    return [3 /*break*/, 3];
+                case 2:
+                    error_2 = _a.sent();
+                    console.error(error_2);
+                    return [3 /*break*/, 3];
+                case 3: return [2 /*return*/];
+            }
+        });
+    });
 }
