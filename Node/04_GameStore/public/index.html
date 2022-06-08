@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Store</title>
+    <link rel="stylesheet" href="./styles/dist/index.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.js" integrity="sha512-rozBdNtS7jw9BlC76YF1FQGjz17qQ0J/Vu9ZCFIW374sEy4EZRbRcUZa2RU/MZ90X2mnLU56F75VfdToGV0RiA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body>
+    <header class="header-nav">
+        <nav>
+            <ul>
+                <li><a href="">Home</a></li>
+                <!-- <li><a href="">Category</a></li> -->
+                <li><a href="">Contact Us</a></li>
+            </ul>
+            <ul>
+                <li><a href="">Login</a></li>
+                <li><a href="">Register</a></li>
+                <li><a href="">Cart</a></li>
+            </ul>
+        </nav>
+    </header>
+    <header class="header-title">
+        <h1>Gaming Store</h1>
+        <p>Online Shopping Games</p>
+    </header>
+    <main>
+        <nav>
+            <ul>
+                <li><a onclick="handleActionGames()">Action</a></li>
+                <li><a href="">Role-Playing</a></li>
+                <li><a href="">Strategy</a></li>
+                <li><a href="">Adventure & Casual</a></li>
+                <li><a href="">Simulation</a></li>
+                <li><a href="">Sports & Racing</a></li>
+            </ul>
+        </nav>
+        <section class="grid-container" id="gamesShowcase">
+        </section>
+    </main>
+    <script src="./dist/index.js"></script>
+</body>
+</html>
