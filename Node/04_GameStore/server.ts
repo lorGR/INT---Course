@@ -72,6 +72,15 @@ const arrActionGames: Array<Game> = [
     }
 ]
 
+const arrRolePlayingGames: Array<Game> = [
+    {
+        gameName: "My Time at Sandrock",
+        gamePrice: "14.99",
+        price: "$",
+        src: ""
+    },
+]
+
 app.get('/api/action-games', (req, res) => {
     try {
         res.send({arrActionGames});

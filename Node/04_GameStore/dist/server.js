@@ -62,6 +62,14 @@ var arrActionGames = [
         src: "https://www.mobygames.com/images/covers/l/726221-it-takes-two-playstation-4-front-cover.jpg"
     }
 ];
+var arrRolePlayingGames = [
+    {
+        gameName: "My Time at Sandrock",
+        gamePrice: "14.99",
+        price: "$",
+        src: ""
+    },
+];
 app.get('/api/action-games', function (req, res) {
     try {
         res.send({ arrActionGames: arrActionGames });
